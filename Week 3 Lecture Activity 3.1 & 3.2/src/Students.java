@@ -17,5 +17,5 @@ class Students
 	int age;
 	Boolean isITMajor;
 	char gender;	
-	
+	//Added new comment to test ThinkpadX1C7
 }
