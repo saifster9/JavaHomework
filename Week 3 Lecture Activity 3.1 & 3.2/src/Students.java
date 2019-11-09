@@ -16,9 +16,6 @@ class Students
 	String name;
 	int age;
 	Boolean isITMajor;
-	char gender;
-	
-	//Added Comment
-	
+	char gender;	
 	
 }
