@@ -11,101 +11,13 @@ A student can change major. In such situation, the new major must be provided.
 If it is “IT”, the Boolean variable is set to true; otherwise, it is set to false. 
  */
 
-import java.util.Scanner;
-
-/* Name of the class has to be "Main" only if the class is public. */
-
-class Student
+class Students
 {
-	private String name;
-	private int age;
-	private boolean itMajor;
-	private char gender;
-
-	public Student()
-	{
-		name = "";
-		age = 0;
-		itMajor = false;
-		gender = '\u0000';
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public void setAge(int age)
-	{
-		this.age = age;
-	}
-
-	public int getAge()
-	{
-		return this.age;
-	}
-
-	public void setItMajor(boolean itMajor)
-	{
-		this.itMajor = itMajor;
-	}
-
-	public boolean getItMajor()
-	{
-		return this.itMajor;
-	}
-
-	public void setGender(char gender)
-	{
-		this.gender = gender;
-	}
-
-	public char getGender()
-	{
-		return this.gender;
-	}
-
-	public void changeMajor(String newMajor)
-	{
-		this.itMajor = newMajor.equals("IT");
-	}
-
-	@Override
-	public String toString()
-	{
-		return name + " " + age + " " + itMajor + " " + gender;
-	}
+	String name;
+	int age;
+	Boolean isITMajor;
+	char gender;
+	
+	
+	
 }
-
-class Ideone
-{
-
-	public static void main(String[] args) throws java.lang.Exception
-	{
-		Scanner obj = new Scanner(System.in);
-		Student stu = new Student();
-		System.out.println("Enter student's name");
-		String name = obj.next();
-		stu.setName(name);
-		System.out.println("Enter student's year of birth");
-		int birthYear = obj.nextInt();
-		System.out.println("Enter the curernt year");
-		int currentYear = obj.nextInt();
-		int age = currentYear - birthYear;
-		stu.setAge(age);
-		System.out.println("Enter student's gender");
-		char g = obj.next().charAt(0);
-		stu.setGender(g);
-		System.out.println("Enter the student's major");
-		String major = obj.next();
-		stu.setItMajor(major.equals("IT"));
-
-		System.out.println(stu);
-	}
-}
-
