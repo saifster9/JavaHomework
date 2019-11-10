@@ -21,7 +21,7 @@ public class TestStudent
 		System.out.print("Enter student's major: ");
 		String major = scan.nextLine();
 		firstStudent.setMajorIT(major);
-		System.out.println("Enter student's gender: ");
+		System.out.print("Enter student's gender: ");
 		char gender = scan.nextLine().charAt(0);
 		firstStudent.setGender(gender);
 
@@ -78,9 +78,11 @@ public class TestStudent
 		System.out.print("Enter student's major: ");
 		String major2 = scan.nextLine();
 		thirdStudent.setMajorIT(major2);
-		System.out.println("Enter student's gender: ");
+		System.out.print("Enter student's gender: ");
 		char gender2 = scan.nextLine().charAt(0);
 		thirdStudent.setGender(gender2);		
+		
+		scan.close();
 		
 		//show the third student's state
 		System.out.println("\nState of Third Student: ");		
