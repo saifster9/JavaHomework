@@ -22,68 +22,80 @@ class Student
 	private int age;
 	private boolean majorIT;
 	private char gender;
-	
-	
-	//  constructors
+
+	// constructors
 	public Student()
 	{
-		name = "unknown";	//""'
+		name = "unknown"; // ""'
 		age = 0;
 		majorIT = false;
-		gender = 'u'; 	//\u0000';
+		gender = 'u'; // \u0000';
+	}
+
+	public Student(String newName, int newAge, String major, char gender)
+	{
+		this.setName(newName);
+		this.setAge(newAge);
+		this.setMajorIT(major);
+		this.setGender(gender);
 	}
 
 	// behaviors
 	public int calcAge(int birthYear, int currentYear)
 	{
 		return currentYear - birthYear;
-		
-		//int age = currentYear - birthYear;
-		//return age;
+		// int age = currentYear - birthYear;
+		// return age;
 	}
 	
+	public void displayInfo()
+	{
+		//print this object's data using getters
+		//System.out.println("Name: " + this.getName() + ", Age " + this.getAge() + ", IT Major? " + this.getMajorIT() + ", Gender: " + this.getGender());
+		System.out.println("Name: " + name + ", Age: " + age + ", IT Major? " + majorIT + ", Gender? " + gender);
+	}
+
+	// determine if the person is na IT major
 	public void changeMajor(String newMajor)
 	{
 		if (newMajor.equalsIgnoreCase("IT"))
 			majorIT = true;
 		else
 			majorIT = false;
-		
 	}
-	
+
 	// getters and setters
 	public String getName()
 	{
 		return name;
 	}
-	
+
 	public void setName(String stuName)
 	{
 		name = stuName;
 	}
-	
+
 	public int getAge()
 	{
 		return age;
 	}
-	
+
 	public void setAge(int age)
 	{
 		this.age = age;
 	}
-	
+
 	public boolean getMajorIT()
 	{
 		return majorIT;
 	}
-	
-	public void  setMajorIT(String major)
+
+	public void setMajorIT(String major)
 	{
 		if (major.equalsIgnoreCase("IT"))
 		{
 			majorIT = true;
-		}
-		else
+		} else
 		{
 			majorIT = false;
 		}
