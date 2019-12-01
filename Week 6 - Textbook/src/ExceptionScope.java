@@ -13,7 +13,7 @@ public class ExceptionScope
 	{
 		System.out.println("Level 1 beginning."); 
 
-/*		try
+		try
 		{
 			level2();
 		}
@@ -27,7 +27,7 @@ public class ExceptionScope
 			problem.printStackTrace();
 			System.out.println();
 		} 
-*/
+
 		level2();
 		System.out.println("Level 1 ending.");
 	} 
@@ -40,22 +40,8 @@ public class ExceptionScope
 	{
 		System.out.println("Level 2 beginning.");
 		
-		try
-		{
-			level3();
-		}
-		catch (ArithmeticException problem)
-		{
-			System.out.println();
-			System.out.println("The exception message is: " +
-					problem.getMessage());
-			System.out.println();
-			System.out.println("The call stack trace:");
-			problem.printStackTrace();
-			System.out.println();
-		} 
 
-//		level3();
+		level3();
 		System.out.println("Level 2 ending.");
 	} 
 
