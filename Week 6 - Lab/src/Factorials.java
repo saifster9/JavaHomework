@@ -13,32 +13,41 @@ public class Factorials
 {
 	public static void main(String[] args)
 	{
-		IllegalArgumentException e = new IllegalArgumentException();
-		
 		String keepGoing = "y";
 		Scanner scan = new Scanner(System.in);
 		while (keepGoing.equals("y") || keepGoing.equals("Y"))
 		{
 			System.out.print("Enter an integer: ");
 			int val = scan.nextInt();
-			try
-			{
-				if (val<0)
+			if (val < 0)
 				{
-					throw new IllegalArgumentException("Value entered cannot be a negative number");
+					try
+					{
+						System.out.println("Factorial(" + val + ") = " + MathUtils.factorial(val));
+						throw new IllegalArgumentException("Enter a positive integer");
+					}
+					catch (IllegalArgumentException ex)
+					{
+						System.err.println(ex);
+					}
 				}
-				else
-					if (val >16)
-				{
-					throw new IllegalArgumentException("Value entered is too big, enter a number smaller than 16");
-				}
-				else
-					System.out.println("Factorial(" + val + ") = "+ MathUtils.factorial(val));
-			}
-			catch (IllegalArgumentException ex)
+			else if (val > 12)
 			{
-				System.out.println("Value entered cannot be a negative number");
+				try
+				{
+					System.out.println("Factorial(" + val + ") = " + MathUtils.factorial(val));
+					throw new IllegalArgumentException("Enter an integer smaller than 12");
+				}
+				catch (IllegalArgumentException ex)
+				{
+					System.err.println(ex);
+				}
 			}
+			else
+			{
+				System.out.println("Factorial(" + val + ") = " + MathUtils.factorial(val));
+			}
+			
 			System.out.print("Another factorial? (y/n) ");
 			keepGoing = scan.next();
 		}
